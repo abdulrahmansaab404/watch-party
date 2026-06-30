@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Watch Party</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="join-screen">
+  <div id="join-box">
+    <div id="join-title">WATCH PARTY</div>
+    <div id="join-room-label"></div>
+    <input id="join-name" type="text" maxlength="40" placeholder="your name" />
+    <input id="join-password" type="password" maxlength="64" placeholder="password (if your host set one)" />
+    <button id="join-btn">JOIN</button>
+    <div id="join-note">One click is required so your browser allows audio playback. Camera/mic permission will be asked next — you can deny it and still watch in sync.</div>
+    <div id="join-error" class="hidden"></div>
+  </div>
+</div>
+
+<div id="app">
+
+  <header id="topbar">
+    <div id="status">
+      <span id="conn-dot" class="dot dot-off"></span>
+      <span id="conn-text">connecting</span>
+      <span id="latency"></span>
+    </div>
+    <div id="episode-label">—</div>
+    <button id="resync-btn" title="Force this video back to the group's exact position">RESYNC</button>
+  </header>
+
+  <main id="main">
+
+    <section id="player-col">
+      <div id="video-wrap">
+        <video id="video" playsinline></video>
+        <div id="video-overlay" class="hidden">
+          <span id="overlay-text"></span>
+        </div>
+      </div>
+
+      <div id="player-controls">
+        <button id="playpause-btn">PLAY</button>
+        <input id="seek-bar" type="range" min="0" max="1000" value="0" step="1" />
+        <span id="time-label">0:00 / 0:00</span>
+        <select id="quality-select" title="Quality affects only your own device">
+          <option value="">quality</option>
+        </select>
+        <button id="cam-toggle" class="toggle-btn" title="Toggle your camera">CAM</button>
+        <button id="mic-toggle" class="toggle-btn" title="Toggle your microphone">MIC</button>
+      </div>
+    </section>
+
+    <aside id="side-col">
+
+      <div id="picker-block" class="block">
+        <div class="block-title">EPISODES</div>
+        <select id="season-select"></select>
+        <div id="episode-list"></div>
+      </div>
+
+      <div id="people-block" class="block">
+        <div class="block-title">PEOPLE<span id="people-count"></span></div>
+        <div id="video-grid"></div>
+      </div>
+
+      <div id="name-block" class="block">
+        <div class="block-title">YOU</div>
+        <input id="name-input" type="text" maxlength="40" placeholder="your name" />
+      </div>
+
+    </aside>
+
+  </main>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.15/hls.min.js"></script>
+<script src="video-sources.js"></script>
+<script src="sync.js"></script>
+<script src="webrtc.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: sync-watch-party
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ROOM_PASSWORD
+        sync: false
