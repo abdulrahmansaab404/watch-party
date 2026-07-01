@@ -30,7 +30,7 @@ const VIDEO_LIBRARY = {
           episode: 1,
           title: 'Chapter One: The Vanishing of Will Byers',
           sources: [
-            { quality: '1080p', type: 'mp4', url: 'https://www.cineby.at/tv/66732/1/1' },
+            { quality: '1080p', type: 'mp4', url: 'https://www.vidking.net/embed/tv/66732/1/1' },
             //{ quality: '720p',  type: 'mp4', url: 'https://your-host.example/st/s1e1-720p.mp4' },
           ],
         },
